@@ -1,1 +1,66 @@
+#1.List of hospitals in state AL
+
+a.select("Hospital name","Address","City","State").filter(a.State =='AL').show(10)
+
+#2.All the hospitals in State CA where rating=5 and Department= radiotherapy
+
+a.select("Hospital name","Address","City","State","ZIP_Code").filter((a.State =='CA')&(a.Department=="radiotherapy")&(a.Rating==5)).show(10)
+
+
+#3.Top rated hospital in city LAKE Village 
+
+a.select("Hospital Name","Address","City","State","Rating").filter(a.City=='LAKE VILLAGE').orderBy(a.Rating.desc()).show(10)
+
+
+#4.Top rated hospitals in state AK
+
+a.select("Hospital Name","Address","City","State","Rating").filter(a.State=='AK').orderBy(a.Rating.desc()).show(10)
+
+
+#5.Number of hospitals in zip code=35957 with Hospital Type= Acute Care Hospitals
+
+a.select("Hospital Name","Address","City","State","ZIP_Code").filter((a.ZIP_Code==35957)&(a.Hospital_Type=='Acute Care Hospitals')).show()
+
+#6.Find the patient in which hospital with patient id
+
+a.select("Hospital name","Address","City","State","Rating").filter(a.patientID==10005).show()
+
+#7.list and Number of distinct Hospital ownership
+
+a.select("Hospital_Ownership").distinct().show()
+a.select("Hospital_Ownership").distinct().count()
+
+#8. Hospital in city DILLINGHAM having gynecology department
+a.select("Hospital name","City","State","Department","Rating").filter((a.Department=='gynecology')&(a.City=='DILLINGHAM')).show()
+
+#9.Hospitals available for children and Senior citizen in a particular city
+a.select("Hospital name","City","State","Department","Age").filter((a.Age=='0-10')&(a.State=='CA')).show()
+a.select("Hospital name","City","State","Department","Age").filter((a.Age=='51-60')&(a.State=='AK')).show()
+
+#10.Hospitals whose ratings are 3 and 4.
+a.select("Hospital name","Rating").filter(((a.Rating=='3')|(a.Rating=='4'))&(a.State=='CA')).show(10)
+
+#11.Hospitals which are  acute care and critical accessable.
+
+a.select("Hospital name","State","City","Rating").filter(((a.Hospital_Type=='Acute Care Hospital')|(a.Hospital_Type=='Critical Access Hospitals'))&(a.State=='CA')).show(10)
+
+#12.State wise Acute care hospitals
+	
+a.select("Hospital name","City","State","Hospital_Type","Rating").filter((a.Hospital_Type=='Acute Care Hospitals')&(a.State=='PA')).show()
+
+
+#13.Hospitals and types sort by Country
+
+a.select("Hospital name","City","State","Hospital_Type","Rating").filter(a.County_Name=='LOS ANGELES').show(10)
+
+#14.Hospitals for children
+
+a.select("Hospital name","City","State","Hospital_Type","Rating").filter((a.Hospital_Type=='Childrens')&(a.State=="CA")).show()
+
+#15.Number of rooms available in a hospital in a particular city
+a.select("Hospital name","Address","City","State","ZIP_Code").filter(a.Rooms_available==2).show(2)
+
+#16.Hospitals sort by Government or local in particular state
+
+a.select("Hospital name","Address","City","State","ZIP_Code").filter((a.Hospital_Ownership=='Government - Local')&(a.State=='AL')).show()
 
