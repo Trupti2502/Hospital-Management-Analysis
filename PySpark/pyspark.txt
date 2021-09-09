@@ -1,1 +1,71 @@
+>>> sqlContext.sql("create table hospital(Hospital_name string, Address string, city string, state string,ZIP_code int, Country_name string,Hospital_type string, Hospital_Ownership string,Available_extra_rooms int, Department string,Bed_grade int, patient_id int, Type_of_admission string, severity_of_illness string,Visitors_with_patient int, age string,Admission_deposit int ,Stay string, ratings float)row format delimited fields terminated by ',' lines terminated by '\n' stored as textfile")
 
+>>> sqlContext.sql("describe hospital").show()
+
+For Loading Data In Table:
+>>>sqlContext.sql("load data local inpath '/home/kareemv46/hpxsemi.csv' into table hospital").show()
+
+For display whole table
+>>>sqlContext.sql("select * from hospital").show(10)
+
+1.List of hospitals in state AL
+>>> sqlContext.sql("select Hospital_name,Address,city,state from hospital where state='AL'").show()
+
+2.All the hospitals in State CA where rating=5 and Department= radiotherapy
+>> sqlContext.sql("select Hospital_Name,city,state,ratings from hospital where state='CA' and Department='radiotherapy' and ratings=5").show()
+ 
+
+3.Top rated hospital in city LAKE Village :
+>>sqlContext.sql("select Hospital_Name,city,state,ratings from hospital where city='LAKE VILLAGE'order by ratings DESC").show()
+
+ 
+4.Top rated hospitals in state AK
+>>>sqlContext.sql("select Hospital_Name,city,state,ratings from hospital where state='AK'order by ratings DESC").show()
+ 
+
+5.Number of hospitals in zip code=35957 with Hospital Type= Acute Care Hospitals
+>>>sqlContext.sql("select Hospital_Name,city,state,ratings from hospital where ZIP_code=35957 and Hospital_type='Acute Care Hospitals'").show()
+
+ 
+6.Find the patient in which hospital with patient id
+>>>sqlContext.sql("select Hospital_Name,city,state,ratings from hospital where patient_id=10005 ").show()
+
+
+7.list and Number of distinct cities 
+>>>sqlContext.sql("select distinct city from hospital ").show()
+>>> sqlContext.sql("select count(distinct city) from hospital ").show()
+
+ 
+8. Hospital in city DILLINGHAM having gynecology department
+>>sqlContext.sql("select Hospital_Name,city,state,Department,ratings from hospital where Department='gynecology' and city='DILLINGHAM'").show()
+
+
+9.Hospitals available for children and Senior citizen
+>>> sqlContext.sql("select Hospital_Name,city,state,Department,ratings from hospital where age='51-60' or age ='0-10'").show()
+
+ 
+10.Hospitals whose ratings are 3 and 4.
+>>> sqlContext.sql("select Hospital_Name,ratings from hospital where ratings='3' or ratings='4'").show()
+
+
+11.Hospitals which are  acute care and critical accessable.
+>>>sqlContext.sql("select Hospital_Name,state,city,ratings from hospital where Hospital_type='Acute Care Hospital' or Hospital_type='Critical Access Hospitals'").show()
+
+
+12.State wise Acute care hospitals	
+>>> sqlContext.sql("select Hospital_Name,city,state,hospital_type,ratings from hospital where hospital_type='Acute Care Hospitals' and state='PA'").show()
+
+ 
+13.sqlContext.sql("select Hospital_Name,city,state,hospital_type,ratings from hospital where Country_name='LOS ANGELES' ").show()
+
+ 
+14.Hospitals for children
+>>> sqlContext.sql("select Hospital_Name,city,state,hospital_type,ratings from hospital where hospital_type='Childrens' ").show()
+
+ 
+15.Number of rooms available in a hospital in a particular city
+sqlContext.sql("select hospital_name,address,city,state,zip_code from hospital_orc where available_extra_rooms=2 and state='AL' ").show(2)
+
+
+ 
+16.sqlContext.sql("select hospital_name,address,city,state,zip_code from hospital_orc where hospital_ownership='Government - Local' and state='AL' ").show()
