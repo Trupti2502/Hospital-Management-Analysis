@@ -11,18 +11,18 @@ Recent Covid-19 Pandemic has raised alarms over one of the most overlooked area 
 This parameter helps hospitals to identify patients of high LOS risk (patients who will stay longer) at the time of admission. Once identified, patients with high LOS risk can have their treatment plan optimized to minimize LOS and lower the chance of staff/visitor infection. Also, prior knowledge of LOS can aid in logistics such as room and bed allocation planning.
 
 ## TOOLS AND TECHNOLOGIES
-###1)Spark
-###2)Hive Database
-###3)Spark SQL
-###4)Kaggle
-###5)Jupyter Notebook
-###6)HDFS
-###7)Cloudera-V
-###8)GitHub
+### 1)Spark
+### 2)Hive Database
+### 3)Spark SQL
+### 4)Kaggle
+### 5)Jupyter Notebook
+### 6)HDFS
+### 7)Cloudera-V
+### 8)GitHub
 
-##CONCEPTS 
-###1)Spark SQL
-###2)Partitioning
-###3)Pyspark
-###4)Spark Session
-###5)DataFrame
+## CONCEPTS 
+### 1)Spark SQL
+### 2)Partitioning
+### 3)Pyspark
+### 4)Spark Session
+### 5)DataFrame
