@@ -35,4 +35,4 @@
 * 4)TRUPTI CHAUDHARI
 
 ## License
-This project uses the following license: <MIT>
+This project uses the following license: <https://github.com/Trupti2502/HealthCare/blob/main/LICENSE>
