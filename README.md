@@ -35,4 +35,4 @@
 * 4)TRUPTI CHAUDHARI
 
 ## License
-This project uses the following license: <>.
+This project uses the following license: <MIT License>
