@@ -33,3 +33,6 @@
 * 2)MOHAMMED ZAKIKAREEM
 * 3)GAURAV MISAL
 * 4)TRUPTI CHAUDHARI
+
+## License
+This project uses the following license: <>.
