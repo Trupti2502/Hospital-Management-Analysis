@@ -1,4 +1,4 @@
-# spark_project_2
+# Hospital Management Analysis
 ## DESCRIPTION
 * 1)The project is on medical and healthcare .
 * 2)It helps to manage functionality and events in healthcare centre.
